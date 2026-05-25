@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-[#f7f8f9] text-gray-900 selection:bg-black selection:text-white;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  body, html {
+    background-color: white !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .print-hide {
+    display: none !important;
+  }
+  /* Force a block layout for print */
+  #root > div {
+    display: block !important;
+    height: auto !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  .invoice-paper-wrapper {
+    width: 100% !important;
+    padding: 0 !important;
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .invoice-paper {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 2.5rem !important;
+    height: auto !important;
+  }
+}
+
+/* Custom scrollbar to keep it clean */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 20px;
+}
